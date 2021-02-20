@@ -160,6 +160,10 @@ function deleteCookie(name) {
 
 
 $(document).ready(function () {
+
+	$('[type="text"], textarea').attr('dir', 'auto')
+
+
 	var burger_height;
 	var submenu_sum_width;
 	var topmenu_sum_width;
