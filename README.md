@@ -13,10 +13,10 @@ Browsers: Chrome, Safari, Internet Explorer and Firefox
 
 1. Clone repository into folder public/themes (Redmine):
 ```
-$ git clone https://github.com/nti-ufpe/circle
+$ git clone https://github.com/nti-ufpe/circle ./circlefa
 ```
 2. Restart application;
-3. Go to "Administration -> Setting -> Display" and select circle theme in "Theme" drop-down list;
+3. Go to "Administration -> Setting -> Display" and select circlefa theme in "Theme" drop-down list;
 4. Save your settings.
 
 ##### License
