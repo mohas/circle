@@ -1348,3 +1348,16 @@ BODY {
 }
 
 #login-form table {margin-top:5em; padding:1em; margin-left: auto; margin-right: auto; border: 2px solid #e8f3ff; background-color:#e8f3ff; }
+
+/* resolved */
+#roadmap tr.status-3:not(.context-menu-selection), #roadmap tr.status-3:not(.context-menu-selection) a.status-3 {
+    color: #43a047 !important;
+}
+/* reopen */
+#roadmap tr.status-7:not(.context-menu-selection), #roadmap tr.status-7:not(.context-menu-selection) a.status-3 {
+    color: #e91e63 !important;
+}
+/* feedback */
+#roadmap tr.status-4:not(.context-menu-selection), #roadmap tr.status-4:not(.context-menu-selection) a.status-3 {
+    color: #fb8c00 !important;
+}
