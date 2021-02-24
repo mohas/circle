@@ -163,6 +163,16 @@ $(document).ready(function () {
 
 	$('[type="text"], textarea, .wiki, .issue-card .name').attr('dir', 'auto')
 
+	try{
+		if($($('.sidebar_wrapper > h3').get(0)).text() === 'Agile Light free version'){
+			$($('.sidebar_wrapper > h3').get(0)).remove()
+			$($('.sidebar_wrapper > ul').get(0)).remove()
+		}
+	}
+	catch(er){
+		
+	}
+
 
 	var burger_height;
 	var submenu_sum_width;
