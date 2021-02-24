@@ -1361,3 +1361,28 @@ BODY {
 #roadmap tr.status-4:not(.context-menu-selection), #roadmap tr.status-4:not(.context-menu-selection) a.status-3 {
     color: #fb8c00 !important;
 }
+
+#projects-index ul.projects div.root a.project {
+    font-family: 'Vazir', 'Roboto', sans-serif;
+}
+
+div.issue .attribute .value {
+    overflow: visible;
+}
+
+.controller-agile_boards .issue-id strong {
+    color: #848484;
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
+.issue-card p.project {
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background-color: transparent !important;
+}
+
+.issue-card .name {
+    text-align: justify;
+}

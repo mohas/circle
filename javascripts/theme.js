@@ -161,7 +161,7 @@ function deleteCookie(name) {
 
 $(document).ready(function () {
 
-	$('[type="text"], textarea, .wiki').attr('dir', 'auto')
+	$('[type="text"], textarea, .wiki, .issue-card .name').attr('dir', 'auto')
 
 
 	var burger_height;
