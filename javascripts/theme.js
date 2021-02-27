@@ -174,7 +174,7 @@ $(document).ready(function () {
 	}
 
 	$('#project-jump > span').text('برو به پروژه')
-	$('#project-jump').detach().appendTo('#top-menu')
+	$('#project-jump').detach().appendTo('#top-menu > ul')
 
 	setTimeout(function(){
 		var isProjectsPage = $('#projects-index').length > 0;

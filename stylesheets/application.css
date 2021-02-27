@@ -1542,7 +1542,7 @@ div.issue .attribute .value {
 #main-menu {
     background-color: #29333a;
 }
-#header {
+#header > h1, #header > #quick-search {
     display: none;
 }
 
@@ -1560,7 +1560,7 @@ h4 {
 #projects-index > h2:first-child {
     margin-top: 0;
 }
-    #projects-index > h2 {
+#projects-index > h2 {
     column-span: all;
     height: 25px;
     border-bottom: 1px solid #ccc;
