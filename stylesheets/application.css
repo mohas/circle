@@ -1103,6 +1103,7 @@ BODY {
     padding: 0;
     padding-top: 5px;
     padding-bottom: 4px;
+    margin-bottom: 6px;
     font-size: 1.05em;
 }
 
@@ -1540,7 +1541,7 @@ div.issue .attribute .value {
 } */
 
 #main-menu {
-    background-color: #29333a;
+    background-color: #2196f3;
 }
 #header > h1, #header > #quick-search {
     display: none;
@@ -1568,4 +1569,14 @@ h4 {
     font-family: 'Vazir';
     margin-bottom: 25px;
     margin-top: 80px;
+}
+
+#project-jump.drdn {
+    padding-bottom: 2px;
+}
+#main-menu li > a {
+    color: #ffffff;
+}
+#main-menu li a.selected, #main-menu li a.selected:hover, #main-menu li a:hover {
+    text-shadow: 2px 4px 3px rgb(0 0 0 / 60%);
 }

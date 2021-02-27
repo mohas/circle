@@ -176,6 +176,8 @@ $(document).ready(function () {
 	$('#project-jump > span').text('برو به پروژه')
 	$('#project-jump').detach().appendTo('#top-menu > ul')
 
+	drnd();
+	
 	setTimeout(function(){
 		var isProjectsPage = $('#projects-index').length > 0;
 		if(isProjectsPage){
@@ -594,3 +596,79 @@ window.onpopstate = function () {
 	loadContent();
 };
 */
+
+
+function drnd(){
+	$(".drdn .autocomplete").val('');
+  
+	// This variable is used to focus selected project
+	var selected;
+	$(".drdn-trigger").click(function(e){
+	  var drdn = $(this).closest(".drdn");
+	  if (drdn.hasClass("expanded")) {
+		drdn.removeClass("expanded");
+	  } else {
+		$(".drdn").removeClass("expanded");
+		drdn.addClass("expanded");
+		selected = $('.drdn-items a.selected'); // Store selected project
+		selected.focus(); // Calling focus to scroll to selected project
+		if (!isMobile()) {
+		  drdn.find(".autocomplete").focus();
+		}
+		e.stopPropagation();
+	  }
+	});
+	$(document).click(function(e){
+	  if ($(e.target).closest(".drdn").length < 1) {
+		$(".drdn.expanded").removeClass("expanded");
+	  }
+	});
+  
+	observeSearchfield('projects-quick-search', null, $('#projects-quick-search').data('automcomplete-url'));
+  
+	$(".drdn-content").keydown(function(event){
+	  var items = $(this).find(".drdn-items");
+  
+	  // If a project is selected set focused to selected only once
+	  if (selected && selected.length > 0) {
+		var focused = selected;
+		selected = undefined;
+	  }
+	  else {
+		var focused = items.find("a:focus");
+	  }
+	  switch (event.which) {
+	  case 40: //down
+		if (focused.length > 0) {
+		  focused.nextAll("a").first().focus();;
+		} else {
+		  items.find("a").first().focus();;
+		}
+		event.preventDefault();
+		break;
+	  case 38: //up
+		if (focused.length > 0) {
+		  var prev = focused.prevAll("a");
+		  if (prev.length > 0) {
+			prev.first().focus();
+		  } else {
+			$(this).find(".autocomplete").focus();
+		  }
+		  event.preventDefault();
+		}
+		break;
+	  case 35: //end
+		if (focused.length > 0) {
+		  focused.nextAll("a").last().focus();
+		  event.preventDefault();
+		}
+		break;
+	  case 36: //home
+		if (focused.length > 0) {
+		  focused.prevAll("a").last().focus();
+		  event.preventDefault();
+		}
+		break;
+	  }
+	});
+  }
