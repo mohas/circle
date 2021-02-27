@@ -1101,6 +1101,9 @@ BODY {
 
 #top-menu .header_elements {
     padding: 0;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    font-size: 1.05em;
 }
 
 #top-menu .header_elements:after {
@@ -1516,4 +1519,53 @@ div.issue .attribute .value {
 #main #sidebar.opened .sidebar_closer {
     margin-left: -21px !important;
     padding-left: 21px !important;
+}
+
+#projects-index ul.projects li.root {
+    text-align: center;
+}
+
+#projects-index ul.projects div.root a.project {
+    font-size: 1.5em;
+}
+
+/* #header H1 {
+    display: none !important;
+    visibility: hidden;
+}
+
+#quick-search {
+    display: none !important;
+    visibility: hidden;
+} */
+
+#main-menu {
+    background-color: #29333a;
+}
+#header {
+    display: none;
+}
+
+#project-jump > span {
+    text-align: center;
+    line-height: 13px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Vazir', 'Trebuchet MS', Verdana, sans-serif !important;
+}
+#projects-index > h2:first-child {
+    margin-top: 0;
+}
+    #projects-index > h2 {
+    column-span: all;
+    height: 25px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    font-family: 'Vazir';
+    margin-bottom: 25px;
+    margin-top: 80px;
 }
