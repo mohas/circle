@@ -174,79 +174,80 @@ $(document).ready(function () {
 	}
 
 	$('#project-jump > span').text('برو به پروژه')
-	$('#project-jump').detach().appendTo('.header_elements')
+	$('#project-jump').detach().appendTo('#top-menu')
 
-	$('#project-jump > .drdn-items').children()
-
-	var isProjectsPage = $('#projects-index').length > 0;
-	if(isProjectsPage){
-		var bookmarks = {},
-		recents = {},
-		projects = {};
-
-		$('#project-jump .drdn-items > strong, #project-jump .drdn-items > a').each(function(){
-			var tagName = this.tagName;
-			var $el = $(this)
-			if(tagName === 'STRONG'){
-				if($el.text() === 'Bookmarks')
-					mode = 'b'
-				else if($el.text() === 'Recently used')
-					mode = 'r'
-				else if($el.text() === 'Other projects')
-					mode = 'p'
-			}
-			else{
-				switch(mode){
-					case 'b':
-						bookmarks[$el.text()] = '';
-						break;
-					case 'r':
-						recents[$el.text()] = '';
-						break;
-					case 'p':
-						projects[$el.text()] = '';
-						break;
+	setTimeout(function(){
+		var isProjectsPage = $('#projects-index').length > 0;
+		if(isProjectsPage){
+			var bookmarks = {},
+			recents = {},
+			projects = {};
+	
+			$('#project-jump .drdn-items > strong, #project-jump .drdn-items > a').each(function(){
+				var tagName = this.tagName;
+				var $el = $(this)
+				if(tagName === 'STRONG'){
+					if($el.text() === 'Bookmarks')
+						mode = 'b'
+					else if($el.text() === 'Recently used')
+						mode = 'r'
+					else if($el.text() === 'Other projects')
+						mode = 'p'
 				}
-			}
-		})
-
-		var projectCards = {}
-		$('#projects-index .projects > li').each(function(){
-			var name = $(this).find('a.root').text().trim();
-			projectCards[name] = $(this).detach();
-		})
-
-		$('#projects-index > .projects').remove();
-
-		var projectsEl = $('<ul>')
-		if(Object.keys(bookmarks).length !== 0){
-			$('<h2>').text('نشان شده ها').css({'column-span': 'all', 'height': 25}).appendTo('#projects-index')
-			projectsEl.addClass('projects root')
-			for(var pName in bookmarks){
-				projectCards[pName].appendTo(projectsEl)
-			}
-			projectsEl.appendTo('#projects-index')
-		}
-		projectsEl = $('<ul>')
-		if(Object.keys(recents).length !== 0){
-			$('<h2>').text('آخرین بازدیدها').css({'column-span': 'all', 'height': 25}).appendTo('#projects-index')
-			projectsEl.addClass('projects root')
-			for(var pName in recents){
-				projectCards[pName].appendTo(projectsEl)
-			}
-			projectsEl.appendTo('#projects-index')
-		}
-		projectsEl = $('<ul>')
-		if(Object.keys(projects).length !== 0){
-			$('<h2>').text('باقی پروژه ها').css({'column-span': 'all', 'height': 25}).appendTo('#projects-index')
-			projectsEl.addClass('projects root')
-			for(var pName in projects){
-				if(pName !== 'All Projects')
+				else{
+					switch(mode){
+						case 'b':
+							bookmarks[$el.text()] = '';
+							break;
+						case 'r':
+							recents[$el.text()] = '';
+							break;
+						case 'p':
+							projects[$el.text()] = '';
+							break;
+					}
+				}
+			})
+	
+			var projectCards = {}
+			$('#projects-index .projects > li').each(function(){
+				var name = $(this).find('a.root').text().trim();
+				projectCards[name] = $(this).detach();
+			})
+	
+			$('#projects-index > .projects').remove();
+	
+			var projectsEl = $('<ul>')
+			if(Object.keys(bookmarks).length !== 0){
+				$('<h2>').text('نشان شده ها').css({'column-span': 'all', 'height': 25}).appendTo('#projects-index')
+				projectsEl.addClass('projects root')
+				for(var pName in bookmarks){
 					projectCards[pName].appendTo(projectsEl)
+				}
+				projectsEl.appendTo('#projects-index')
 			}
-			projectsEl.appendTo('#projects-index')
+			projectsEl = $('<ul>')
+			if(Object.keys(recents).length !== 0){
+				$('<h2>').text('آخرین بازدیدها').css({'column-span': 'all', 'height': 25}).appendTo('#projects-index')
+				projectsEl.addClass('projects root')
+				for(var pName in recents){
+					projectCards[pName].appendTo(projectsEl)
+				}
+				projectsEl.appendTo('#projects-index')
+			}
+			projectsEl = $('<ul>')
+			if(Object.keys(projects).length !== 0){
+				$('<h2>').text('باقی پروژه ها').css({'column-span': 'all', 'height': 25}).appendTo('#projects-index')
+				projectsEl.addClass('projects root')
+				for(var pName in projects){
+					if(pName !== 'All Projects')
+						projectCards[pName].appendTo(projectsEl)
+				}
+				projectsEl.appendTo('#projects-index')
+			}
 		}
-	}
+	}, 500)
+	
 
 
 	var burger_height;
