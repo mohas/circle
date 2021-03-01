@@ -176,9 +176,9 @@ $(document).ready(function () {
 	$('#project-jump > span').text('برو به پروژه')
 	$('#project-jump').detach().appendTo('#top-menu > ul')
 
-	drnd();
 	
 	setTimeout(function(){
+		drnd();
 		var isProjectsPage = $('#projects-index').length > 0;
 		if(isProjectsPage){
 			var bookmarks = {},

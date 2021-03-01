@@ -1,7 +1,7 @@
 #### Redmine Circle Theme
 
 ##### About
-A freshly designed, open and responsive Redmine and RedmineCRM plugins theme with flat styles and form elements styles.
+An RTL theme based on [nti-ufpe/circle](https://github.com/nti-ufpe/circle)
 
 ##### Compability
 Redmine 2.x
@@ -13,10 +13,10 @@ Browsers: Chrome, Safari, Internet Explorer and Firefox
 
 1. Clone repository into folder public/themes (Redmine):
 ```
-$ git clone https://github.com/nti-ufpe/circle ./circlefa
+$ git clone https://github.com/mohas/circle-rtl ./circle-rtl
 ```
 2. Restart application;
-3. Go to "Administration -> Setting -> Display" and select circlefa theme in "Theme" drop-down list;
+3. Go to "Administration -> Setting -> Display" and select circle-rtl theme in "Theme" drop-down list;
 4. Save your settings.
 
 ##### License
@@ -24,6 +24,3 @@ Redmine Circle theme is open source and released under the terms of the GNU Gene
 
 ##### Version
 v2.0.2
-
-Copyright (C) 2011-2015 Kirill Bezrukov
-http://www.redminecrm.com/
