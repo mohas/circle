@@ -161,7 +161,7 @@ function deleteCookie(name) {
 
 $(document).ready(function () {
 
-	$('[type="text"], textarea, .wiki, .issue-card .name').attr('dir', 'auto')
+	$('[type="text"], textarea, .wiki, .issue-card .name, .wiki-page pre, .wiki-page h1, .wiki-page h2, .wiki-page h3, .wiki-page h4, .wiki-page h5, .wiki-page h6, .wiki-page p, .wiki-update-info, .other-formats').attr('dir', 'auto')
 
 	try{
 		if($($('.sidebar_wrapper > h3').get(0)).text() === 'Agile Light free version'){
